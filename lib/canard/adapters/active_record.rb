@@ -29,6 +29,7 @@ module Canard
 
       def active_record_table?
         respond_to?(:table_exists?) && table_exists?
+      rescue ::ActiveRecord::NoDatabaseError
       end
 
       # TODO extract has_roles_attribute? and change to has_roles_attribute? || super
